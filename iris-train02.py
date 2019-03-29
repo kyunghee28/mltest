@@ -15,9 +15,8 @@ with open('iris.csv','r',encoding='utf-8') as fp:
                 # 참이면 float(n) (숫자로 시작하면 실수로 실행) -> float(n)은 실수
 
         cols = list(map(fn,cols)) # map이라는 함수가 반복문의 역활을 해준다. / map (함수명, 리스트)
-        # map이 다시 list에 담아주는 역활을 하는데 우린 파이썬 3이므로 list를 적어줘야 한다.
 
-        # 17번째 코드를 풀어쓰면 21~24번째 줄
+        # 17번째 코드를 풀어쓰면 19~22번째 줄
         # rlist = []
         # for c in cols:
         #     temp = fn(c)
@@ -58,9 +57,10 @@ for i in range(total_len):
 # 데이터를 학습하고 예측하기
 clf = svm.SVC()
 clf.fit(train_data, train_label)
-pre = clf.predict(test_data)
+
 # print(test_data)
 
-# 정답구하기
-ac_score = metrics.accuracy_score(test_label,pre)
-print("정답률 : ",ac_score)
+# iris.csv에 있는 정보를 가져와 realDate에 담고 품종 확인
+realDate = [[6.4,2.9,4.3,1.3]]
+result = clf.predict(realDate)
+print(result)
