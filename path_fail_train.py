@@ -17,14 +17,12 @@ data = [
 score = []
 label = []
 
-
 for row in data:
     d = row[0]
     t = row[1]
     r = row[2]
     score.append([d,t])
     label.append(r)
-
 
 clf = svm.SVC()
 clf.fit(score[:7], label[:7])
