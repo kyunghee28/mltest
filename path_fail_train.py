@@ -16,6 +16,8 @@ data = [
 # 70%만 학습에 참여시키고 30%를 갖고 예측하여 정답률을 계산하고 출력하시오.
 score = []
 label = []
+
+
 for row in data:
     d = row[0]
     t = row[1]
@@ -23,15 +25,17 @@ for row in data:
     score.append([d,t])
     label.append(r)
 
+
 clf = svm.SVC()
-clf.fit(score[0:7], label[0:7])
-pre = clf.predict(score[7:10])
+clf.fit(score[:7], label[:7])
+
+pre = clf.predict(score[7:])
 print(pre)
 
 ok = 0
-total = len(label[7:10])
-for i in range(len(label[7:10])):
-    answer = label[7:10][i]
+total = len(label[7:])
+for i in range(len(label[7:])):
+    answer = label[7:][i]
     p = pre[i]
     print(i, answer, p)
 
