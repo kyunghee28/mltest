@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>iris 품종 확인</h2>
+    <hr>
+    <form action="iris.do" method="post">
+    꽃받침 길이를 입력하세요 : <input type="text" name="SepalLength" value={{r1}}><br>
+    꽃받침 넓이를 입력하세요 : <input type="text" name="SepalWidth" value={{r2}}><br>
+    꽃잎의 길이를 입력하세요 : <input type="text" name="PetalLength" value={{r3}}><br>
+    꽃잎의 넓이를 입력하세요 : <input type="text" name="PetalWidth" value={{r4}}><br>
+     <input type="submit"></input>
+    <hr>
+        붓꽃의 품종은 {{result}}<br>
+        정답률은 {{ac}} 입니다.
+    </form>
+</body>
+</html>
