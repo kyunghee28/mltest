@@ -18,4 +18,3 @@ print(b.shape) #(2, 3)
 # c = np.arange(7)
 # d = c.reshape(2,3)
 # print("d",d) # 오류 :  데이터수가 맞지 않아서 오류!
-
