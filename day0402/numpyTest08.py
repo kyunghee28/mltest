@@ -25,7 +25,7 @@ print('a+e : ',a+e) # 결과 : [[0 1 2][1 2 3][2 3 4]] -> Vector operation : e �
 
 #print('b+c :',b+c)  : 오류 : ValueError: operands could not be broadcast together with shapes (6,) (1,3) -> 데이터 수가 다르므로
 # print('b+d :',b+d) : 오류 : ValueError: operands could not be broadcast together with shapes (6,) (2,3)
-print('b+e :',b+e)  # e 배열에서 1행이 b배열 1행과 더해 행 하나를 만들고 (Vector operation 1 번), 각 요소마다 연산(Vector operation 2번)-> Vector operation
+print('b+e :',b+e)  # e 배열에서 1행이 b배열 1행과 더해 행 하나를 만들고 (Vector operation 1 번), 각 요소마다 연산(Vector operation 2번) -> Vector operation
                         # 결과 : [[0 1 2 3 4 5][1 2 3 4 5 6][2 3 4 5 6 7]]
 
 print('c+d :',c+d) # 결과 : [[0 2 4][3 5 7]]   -> BroadCasting과 Vector operation  수행.
