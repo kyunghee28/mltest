@@ -116,9 +116,14 @@ print(b[::2,1:5])   # 결과 :[[ 2  3  4  5][14 15 16 17]]
 print('-'*20)
 
 # 예제 17-5. 배열중에 9, 12, 14, 17, 20, 22, 23이 있는 요소의
-# array indexing을 만들고 fancy indexing 사용해 뽑아오세요
+# array index를 만들고 fancy indexing 사용해 뽑아오세요
 
+# 1. array index를 만들고
+rows = [1,1,2,2,3,3,3]
+cols = [2,5,1,4,1,3,4]
 
+# 2.fancy indexing 사용해 출력
+print(b[rows,cols])
 
 
 
