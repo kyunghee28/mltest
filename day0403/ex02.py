@@ -69,9 +69,14 @@ score = [80,60,100,40,70]
 n = np.array(name)
 s = np.array(score)
 
-s = s > 60
+s = s >= 60
 
 print(n[s])
+
+name = np.array(name)
+score= np.array(score)
+
+print(n[score >= 60])
 
 
 
