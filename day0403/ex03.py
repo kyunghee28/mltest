@@ -122,8 +122,8 @@ print('-'*20)
 rows = [1,1,2,2,3,3,3]
 cols = [2,5,1,4,1,3,4]
 
-# 2.fancy indexing 사용해 출력
-print(b[rows,cols])
+# 2. fancy indexing 사용해 출력
+print(b[rows,cols])   # 결과 : [ 9 12 14 17 20 22 23]
 
 
 
