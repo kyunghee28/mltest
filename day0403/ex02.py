@@ -65,17 +65,16 @@ print("*"*10)
 # 60점 이상이면 합격! 합격한 사람들의 이름을 출력해 봅니다.
 name = ['홍길동','유관순','이순신','김유신','강감찬']
 score = [80,60,100,40,70]
-
+# 방법1.
 n = np.array(name)
 s = np.array(score)
 
 s = s >= 60
-
 print(n[s])
 
+# 방법2.
 name = np.array(name)
 score= np.array(score)
-
 print(n[score >= 60])
 
 
