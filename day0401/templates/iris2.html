@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h2>iris 품종 확인</h2>
+            <form action="iris" method="post">
+                꽃받침 길이 : <input type="text" name="realnum1" value="{{arr[0][0]}}"><br>
+                꽃받침 넓이 : <input type="text" name="realnum2" value="{{arr[0][1]}}"><br>
+                꽃잎 길이 : <input type="text" name="realnum3" value="{{arr[0][2]}}"><br>
+                꽃잎 넓이 : <input type="text" name="realnum4" value="{{arr[0][3]}}"><br>
+                <input type="submit" value="확인">
+            </form>
+            검색한 붓꽃의 종류 : {{r}}
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request
-import pythonTest.iris_train04
+import pythonTest.day0401.iris_train04
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def flower():
         r4 = float(request.form['PetalWidth'])
         # list.append([r1,r2,r3,r4])
 
-        result,ac = pythonTest.iris_train04.irislist(r1, r2, r3, r4)
+        result,ac = pythonTest.day0401.iris_train04.irislist(r1, r2, r3, r4)
 
         return render_template("iris.html",result=result,ac=ac,r1=r1,r2=r2,r3=r3,r4=r4)
 
