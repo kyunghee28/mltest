@@ -1,7 +1,6 @@
-# 숙제)2016_GDP.txt 파일을 읽어 들여 상위 10개의 나라를 막대그래프로 그려주세요
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib import font_manager,rc
+from matplotlib import font_manager,rc,colors
 
                                 # r : 읽기용도
 f = open('Data/2016_GDP.txt','r',encoding="UTF-8")
@@ -23,7 +22,8 @@ money = np.array(money, dtype='int32')
 # 한글 글꼴 설정 - 차트 그리기전
 rc('font',family=font_manager.FontProperties(fname="C:/WINDOWS/Fonts/H2GPRM.TTF").get_name())
 
-plt.bar(name[:10],money[:10])
+# plt.bar(name[:10],money[:10],color="g")
+plt.bar(name[:10],money[:10],color=colors.TABLEAU_COLORS) # 알록달록 색이 나옴 - colors.TABLEAU_COLORS
 plt.xticks(name[:10],name[:10], rotation="90") # rotation="90" : x축에 국가 이름들이 세로로 출력된다.
         # ( 축이 몇개인지, 축에 들어갈 이름, 축의 이름의 각도)
 plt.xlabel("국가이름")
