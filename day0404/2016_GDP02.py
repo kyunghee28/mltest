@@ -28,6 +28,5 @@ plt.xticks(name[:10],name[:10], rotation="90") # rotation="90" : x축에 국가 
 
 plt.ylabel("GDP")
 plt.title("2016년 GDP TOP10")
-
 plt.show()
 
