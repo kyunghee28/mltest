@@ -4,14 +4,13 @@ import matplotlib.pyplot as plt
 
 '''
     pandas의 DataFrame에서 행에 접근할 때 loc 이나 iloc 함수를 이용해 행에 접근 가능
-    
+
     1. key 값을 부여하지 않았는데 행에 접근하려면 index로 접근.(이 때는 loc 이나 iloc 에 차이가 없다.)
-    
+
     2. key값을 부여했을 때는
         index로 접근할 때는 iloc을 쓰고
         key로 접근할 땐 loc 을 사용
 '''
-
 
 df = pd.read_csv('./data/scores.csv')
 
@@ -41,7 +40,7 @@ print(df)
     henry       2   65   89   87   78
 '''
 
-print("-"*2,'연습1',"-"*20)
+print("-" * 2, '연습1', "-" * 20)
 # 연습1) henry의 정보를 출력해 봅시다.(loc, iloc 다 사용)
 
 # loc 사용
@@ -51,28 +50,28 @@ print(df.loc['henry'].values)
 # iloc 사용
 print(df.iloc[-1].values)
 
-print("-"*2,'연습2',"-"*20)
+print("-" * 2, '연습2', "-" * 20)
 # 연습2) andrew 부터 paul 까지의 정보를 출력해 봅니다.
 
 print(df.loc['andrew':'paul'])
 
-print("-"*2,'연습3',"-"*20)
+print("-" * 2, '연습3', "-" * 20)
 # 연습3) adam, dan, walter 의 정보를 출력해 봅니다.
 
-print(df.loc[['adam','dan','walter']])
+print(df.loc[['adam', 'dan', 'walter']])
 
-print("-"*2,'연습4',"-"*20)
+print("-" * 2, '연습4', "-" * 20)
 # 연습4) 앞에서 5번째 학생들의 국어점수를 출력해 봅니다.
 
-print(df.iloc[:5,[1]])
+print(df.iloc[:5, [1]])
 
-print("-"*2,'연습5',"-"*20)
+print("-" * 2, '연습5', "-" * 20)
 # 연습5) 앞에서 5번쨰 학생들의 국어,수학점수를 출력해 봅니다.
 
-print(df.iloc[:5,[1,3]])
+print(df.iloc[:5, [1, 3]])
 
-print("-"*2,'연습6',"-"*20)
+print("-" * 2, '연습6', "-" * 20)
 # 연습6) adam, dan, walter 의 bio를 제외한 과목의 점수를 출력해 봅니다.
 
-print(df.loc[['adam','dan','walter'],['kor','eng','mat']])
-print(df.iloc[[0,4,7],1:4])
+print(df.loc[['adam', 'dan', 'walter'], ['kor', 'eng', 'mat']])
+print(df.iloc[[0, 4, 7], 1:4])
