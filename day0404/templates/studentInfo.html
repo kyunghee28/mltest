@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>{{name}}의 성적</h2>
+    <hr>
+    <form method="post" action="/student">
+        이름 : <input type="text" name="name">
+        <input type="submit" value="확인"><br>
+        <img src="{{fname}}" width="300" height="300">
+    </form>
+    <font color="red">{{msg}}</font>
+</body>
+</html>
