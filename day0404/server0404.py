@@ -19,9 +19,19 @@ def student():
     return render_template("studentInfo.html",name=name, fname=fname, msg=msg)
 
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
+
+@app.route('/subject.do',methods=['GET','POST'])
+def subjectSco():
+    fname =''
+    msg = ''
+    if request.method =='POST':
+        name = request.form['name']
+        fname = pythonTest.day0404.Sinfo.getSubjectScore(name)
+        if fname == "no":
+            msg = "해당 과목이 존재하지 않습니다."
+
+    return render_template('subject.html',fname=fname,msg=msg)
+
 
 if __name__ == '__main__':
     app.run(host="203.236.209.99", debug=True)
