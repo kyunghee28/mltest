@@ -112,7 +112,7 @@ age
 
 # 행의 이름 설정
 r.index = ['unber 18','18-24','25-34','35-44','45-49','50-55','56+']
-print(r)
+# print(r)
 '''
 gender           F         M
 unber 18  3.616291  3.517461
@@ -124,5 +124,53 @@ unber 18  3.616291  3.517461
 56+       3.915534  3.720327
 '''
 r.plot(kind='bar')
-plt.show()
+# plt.show()
 
+# r = df.pivot_table(values='rating', index='gender', aggfunc='mean')
+# print(r)
+#
+# r2 = df.pivot_table(values='rating', index='gender', aggfunc='mean', columns='age')
+# print(r2)
+#
+# r3 = df.pivot_table(values='rating', index=['age','gender'],  aggfunc='mean')
+# print(r3)
+#
+# r4 = df.pivot_table(values='rating', index=['gender','age'],  aggfunc='mean')
+# print(r4)
+
+# 연습 ) 직업별, 성별,나이대별 평균평점을 알려주세요, 단, 결측치는 0으로 채워주세요
+r = df.pivot_table(values='rating', index=['gender','age'], columns='job', aggfunc='mean')
+# print(r)
+
+# print("--"*10,"결측치를 0으로 - 1. ","--"*20)
+r_mean = df.pivot_table(values='rating', index=['gender','age'], columns='job', aggfunc='mean', fill_value=0)
+# print(r_mean)
+
+# print("--"*10,"결측치를 0으로 - 2. ","--"*20)
+r_mean2 = df.pivot_table(values='rating', index=['job','age'], columns='gender', aggfunc='mean', fill_value=0)
+# print(r_mean2)
+
+# print("--"*10,"결측치를 0으로 - 3. ","--"*20)
+r_mean3 = df.pivot_table(values='rating', index=['age','job'], columns='gender', aggfunc='mean', fill_value=0)
+# print(r_mean3)
+
+# pivot_table 시에 어떤것을 index로 하고 어떤것을 columns으로 하는지에 대한 제약은 없지만
+# 항목의 수가 많은 것을 columns으로 두는 것이 읽기가 쉬운것 같다.
+
+
+# unstack() : index를 columns으로 바꿔준다.
+m = df.pivot_table(values='rating', index='age', columns='gender', aggfunc='mean')
+# print(m)
+'''
+gender         F         M
+age                       
+1       3.616291  3.517461
+18      3.453145  3.525476
+25      3.606700  3.526780
+35      3.659653  3.604434
+45      3.663044  3.627942
+50      3.797110  3.687098
+56      3.915534  3.720327
+'''
+m2 = m.unstack()
+print(m2)
