@@ -72,10 +72,16 @@ import random
 #  data2의 내용을 한화면에 _classic_test를 제외한 25개의 스타일별로 나타내도록 합니다.
 data1 = np.random.randint(-1,2,100)
 data2 = np.cumsum(data1)
+
 x = plt.style.available
+x = x[:-1]
+# print(len(x))   #25
+k = 1
 for i in x:
     with plt.style.context(i):
-        plt.subplot(len(i),1,len(i))
+        plt.subplot(5,5,k)
+        k += 1
         plt.plot(data2)
-        plt.show()
-#
+        plt.title(i)
+plt.show()
+
