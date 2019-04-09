@@ -6,4 +6,25 @@ import numpy as np
 
 x = [[0,1],[3,5]]
 x2 = preprocessing.add_dummy_feature(x)
+# add_dummy_feature ==> value를 생략하면 1을 각 행마다 추가해 준다.
 print(x2)
+'''
+    [[1. 0. 1.]
+     [1. 3. 5.]]
+'''
+
+x = [[0,1,2],[3,4,5]]
+x2 = preprocessing.add_dummy_feature(x,9)
+print(x2)
+'''
+[[9. 0. 1. 2.]
+ [9. 3. 4. 5.]]
+'''
+
+x3 = preprocessing.add_dummy_feature(x2,7)
+print(x3)
+'''
+[[7. 9. 0. 1.]
+ [7. 9. 3. 5.]]
+'''
+
