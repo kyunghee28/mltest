@@ -9,4 +9,4 @@ data = pd.read_csv('../data/adult.data.txt' ,header=None, names=names)
 
 data = data[['age','workclass','education','sex','hours-per-week','occupation','income']]
 
-print(data.head())
+workkind = data['workclass'].unique()
