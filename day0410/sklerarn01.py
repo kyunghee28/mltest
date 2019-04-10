@@ -6,10 +6,10 @@ age = [28,20,38,34]
 b_age = preprocessing.LabelBinarizer().fit_transform(age)
 print(b_age)
 '''
-[[0 1 0 0]
- [1 0 0 0]
- [0 0 0 1]
- [0 0 1 0]]
+[[0 1 0 0]  28
+ [1 0 0 0]  20
+ [0 0 0 1]  38
+ [0 0 1 0]] 34
 '''
 
 addr = ['서울','마산','서울','대전','광주']
