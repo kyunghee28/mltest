@@ -117,8 +117,8 @@ not_Yaer = np.setdiff1d(all_Year,g_Year)    # 범위가 큰것을 먼저 써야 
 df = pd.read_excel('../world-series/MLB World Series Champions_ 1903-2016.xlsx')
 many_wins = df.pivot_table(values='Wins', index='Champion', aggfunc='count')
 sorted_many_wins = many_wins.sort_values(by='Wins', ascending=False)
-print(sorted_many_wins)
-''' 공동 4위가 3팀 공동5위가 3팀이 있음
+# print(sorted_many_wins)
+''' 공동 4위가 4팀 공동5위가 3팀이 있음
                         Wins
 Champion                    
 New York Yankees          27
@@ -132,3 +132,31 @@ Detroit Tigers             4
 Oakland Athletics          4
 Pittsburgh Pirates         4
 '''
+
+# 우승한 횟수를 중복이 되지 않도록 만들고  => r
+# 그 중에 5번쨰 값을 출력 (r중에 5번째 위치한 값을 뽑아옴)   => min
+# sorted_many_wins 의 Wins가 그 5번째 값 이상   ==> Wins가 min 이상 되는 데이터 출력
+
+r = sorted_many_wins['Wins'].unique()
+print(r)    # [27 11  7  5  4  3  2  1]
+min = r[4]
+print(min)  # 4
+Wins_top5 = sorted_many_wins[sorted_many_wins['Wins'] >= min]
+print(Wins_top5)
+'''
+                        Wins
+Champion                    
+New York Yankees          27
+St. Louis Cardinals       11
+Boston Red Sox             7
+Los Angeles Dodgers        5
+Cincinatti Reds            5
+New York Giants            5
+Philadelphia Athletics     5
+Detroit Tigers             4
+Oakland Athletics          4
+Pittsburgh Pirates         4
+'''
+
+
+
