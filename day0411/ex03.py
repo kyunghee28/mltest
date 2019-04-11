@@ -6,6 +6,27 @@ import numpy as np
 import pandas as pd
 from sklearn import linear_model, model_selection
 
+#문자열 데이터의 각각의 값의 범위(도메인)을 반환하는 함수를 정의
+
+def getDomain():
+
+    names = ['age','workclass','fnlwgt','education','education-num','marital-status',
+             'occupation','relationship','race','sex','capital-gain','capital-loss',
+             'hours-per-week','native-country','income']
+
+    df = pd.read_csv('../data/adult.data.txt' ,header=None, names=names)
+
+    df = df[['age','workclass','education','occupation','sex','race','hours-per-week','income']]
+
+    workclass = df['workclass'].unique()
+    education = df['education'].unique()
+    occupation = df['occupation'].unique()
+    sex = df['sex'].unique()
+    race = df['race'].unique()
+
+    return workclass,education,occupation,sex,race
+
+
 def MemberInfo(list):
 
     names = ['age','workclass','fnlwgt','education','education-num','marital-status',
@@ -36,11 +57,11 @@ def MemberInfo(list):
     n_df = pd.DataFrame(list, columns=['age','workclass','education','occupation','sex','race','hours-per-week'])
 
     df2 = df.append(n_df, ignore_index=True)
-    op = pd.get_dummies(df2)
 
+    op = pd.get_dummies(df2)
     pred_x = np.array(op.iloc[-1,:-2]).reshape(1,-1)
     pred_y = lr.predict(pred_x)
-    print(pred_y)
+
     return pred_y
 
 

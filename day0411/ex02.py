@@ -11,7 +11,6 @@ df = pd.read_csv('../data/adult.data.txt' ,header=None, names=names)
 df_choice = df[['age','workclass','education','sex','race','hours-per-week','occupation','income']]
 
 new_df = pd.get_dummies(df_choice)
-
 x = new_df.iloc[:,:-2]
 y = new_df.iloc[:,-1]
 
@@ -57,6 +56,8 @@ one_hot = pd.get_dummies(df2)
 
 print(len(one_hot.columns)) # 51
 print(len(new_df.columns))  # 51
+
+
 
 pred_x = np.array(one_hot.iloc[-1,:-2]).reshape(1,-1)
 pred_y = lr.predict(pred_x)
