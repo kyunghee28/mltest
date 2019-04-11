@@ -62,6 +62,7 @@ pred_x = np.array(one_hot.iloc[-1,:-2]).reshape(1,-1)
 pred_y = lr.predict(pred_x)
 
 print(pred_y)   # [0]
+
 '''
 1 이 나오면 5만달라 이상 버는 것
 0 이 나오면 5만달라 미만 버는 것
