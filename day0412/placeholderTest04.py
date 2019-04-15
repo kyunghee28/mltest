@@ -63,6 +63,18 @@ print(csv)
 test_csv = csv[15000:20000]
 test_pat = test_csv[["weight","height"]]
 test_ans = list(test_csv["label_pat"])
+print('test_ans',test_ans) # [array([0, 0, 1]), array([1, 0, 0]), array([0, 1, 0]), ...
+print('test_pat',test_pat)
+'''
+test_pat        weight  height
+15000    0.55   0.690
+15001    0.36   0.760
+    ...
+19998    0.51   0.975
+19999    0.67   0.815
+
+[5000 rows x 2 columns]
+'''
 
 # tensorflow를 위한 데이터 플로우 그래프 구축
 # 플레이스 홀더 선언하기
@@ -123,6 +135,7 @@ for step in range(3500):
 acc = sess.run(accuracy, feed_dict={x:test_pat,y_:test_ans})
 print("정답률=",acc)   # 정답률= 0.9712
 
+sess.close()
 
 # 1) 데이터(174,46,thin)를 넣어 테스트를 해 보도록 합시다.
 
